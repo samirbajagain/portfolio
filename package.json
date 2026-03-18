@@ -1,0 +1,29 @@
+{
+  "name": "samir-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered portfolio for Samir Bajagain — Civil Engineer | Entrepreneur | Creative Professional",
+  "scripts": {
+    "dev:client": "npm run dev --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "dev": "start \"Server\" cmd /c \"cd server && npm run dev\" && start \"Client\" cmd /c \"cd client && npm run dev\"",
+    "build": "npm run build --prefix client",
+    "build:production": "npm run build --prefix client -- --mode production",
+    "preview": "npm run preview --prefix client",
+    "install:all": "npm install --prefix client && npm install --prefix server",
+    "start": "npm run start --prefix server",
+    "clean": "rmdir /s /q client/dist && rmdir /s /q client/node_modules && rmdir /s /q server/node_modules",
+    "clean:build": "rmdir /s /q client/dist"
+  },
+  "keywords": [
+    "portfolio",
+    "civil-engineer",
+    "entrepreneur",
+    "react",
+    "vite",
+    "ai-assistant",
+    "openai"
+  ],
+  "author": "Samir Bajagain",
+  "license": "MIT"
+}
