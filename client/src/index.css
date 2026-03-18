@@ -88,7 +88,9 @@ h1, h2, h3, h4, h5, h6 {
 .glow-purple{ box-shadow: 0 0 42px rgba(204, 156, 82, 0.2); }
 .text-glow  { text-shadow: 0 0 18px rgba(244, 216, 164, 0.26); }
 
-.section-pad { padding: 6rem 1.5rem; }
+.section-pad { padding: 5rem 1rem; }
+@media (min-width: 380px) { .section-pad { padding: 6rem 1.5rem; } }
+@media (min-width: 640px) { .section-pad { padding: 7rem 2rem; } }
 @media (min-width: 768px) { .section-pad { padding: 8rem 3rem; } }
 @media (min-width: 1024px) { .section-pad { padding: 8rem 6rem; } }
 

@@ -131,9 +131,9 @@ export default function Hero() {
         }}
       />
 
-      {/* Left Horse Frame - Hidden on mobile, shown on sm+ */}
+      {/* Left Horse Frame - Visible on all screens, scales from mobile */}
       <motion.div
-        className="hidden sm:flex absolute left-0 top-16 h-[calc(100vh-200px)] pointer-events-none z-[2] items-center"
+        className="absolute left-0 top-20 h-[calc(100vh-180px)] pointer-events-none z-[2] flex items-center"
         initial={{ opacity: 0, x: -120 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.1 }}
@@ -141,14 +141,14 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-left.png")}
           alt="Royal Horse Left"
-          className="w-40 sm:w-56 md:w-80 lg:w-[420px] xl:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
+          className="w-24 xs:w-32 sm:w-56 md:w-80 lg:w-[420px] xl:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
           style={{ filter: "brightness(1.1) contrast(1.08)", objectFit: "contain" }}
         />
       </motion.div>
 
-      {/* Right Horse Frame - Hidden on mobile, shown on sm+ */}
+      {/* Right Horse Frame - Visible on all screens, scales from mobile */}
       <motion.div
-        className="hidden sm:flex absolute right-0 top-16 h-[calc(100vh-200px)] pointer-events-none z-[2] items-center"
+        className="absolute right-0 top-20 h-[calc(100vh-180px)] pointer-events-none z-[2] flex items-center"
         initial={{ opacity: 0, x: 120 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.15 }}
@@ -156,34 +156,57 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-right.png")}
           alt="Royal Horse Right"
-          className="w-40 sm:w-56 md:w-80 lg:w-[420px] xl:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
+          className="w-24 xs:w-32 sm:w-56 md:w-80 lg:w-[420px] xl:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
           style={{ filter: "brightness(1.1) contrast(1.08)", objectFit: "contain" }}
         />
       </motion.div>
 
-      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+        {/* Top Header: SB Logo + Badges - Organized Horizontally */}
         <motion.div
-          className="inline-flex items-center gap-2 glass px-5 py-2.5 rounded-full text-xs text-blue-600 font-semibold tracking-[0.28em] uppercase mb-8 backdrop-blur-xl border border-blue-400/30"
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 flex-wrap"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <span className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-blue-300 animate-pulse shadow-lg shadow-blue-400/50" />
-          Private Portfolio - 2026 Curated Edition
+          {/* SB Logo */}
+          <div className="glass px-4 py-2.5 rounded-full flex items-center gap-2 border border-blue-400/30">
+            <span className="text-lg sm:text-xl font-display font-bold gradient-text">SB</span>
+            <span className="text-xs text-slate-600 font-medium hidden xs:block">Samir Bajagain</span>
+          </div>
+
+          {/* Divider on desktop */}
+          <div className="hidden sm:block w-1 h-6 bg-gradient-to-b from-transparent via-blue-400/50 to-transparent" />
+
+          {/* Private Portfolio Badge */}
+          <motion.div
+            className="inline-flex items-center gap-2 glass px-4 py-2.5 rounded-full text-[10px] xs:text-xs text-blue-600 font-semibold tracking-[0.25em] uppercase backdrop-blur-xl border border-blue-400/30"
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-blue-300 animate-pulse" />
+            <span>Portfolio 2026</span>
+          </motion.div>
+
+          {/* Divider on desktop */}
+          <div className="hidden sm:block w-1 h-6 bg-gradient-to-b from-transparent via-blue-400/50 to-transparent" />
+
+          {/* London Headquarters Badge */}
+          <motion.div
+            className="inline-flex items-center gap-2 rounded-full px-4 py-2.5 border border-blue-500/50 bg-gradient-to-r from-slate-100/80 to-slate-50/80 text-blue-700 text-[10px] xs:text-xs tracking-[0.24em] uppercase font-semibold backdrop-blur-md shadow-lg shadow-blue-500/10"
+            initial={{ opacity: 0, y: 12, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-blue-500 to-blue-400" />
+            <span>Global Reach</span>
+          </motion.div>
         </motion.div>
 
-        <motion.div
-          className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 mb-10 border border-blue-500/50 bg-gradient-to-r from-slate-100/80 to-slate-50/80 text-blue-700 text-xs tracking-[0.24em] uppercase font-semibold backdrop-blur-md shadow-lg shadow-blue-500/10"
-          initial={{ opacity: 0, y: 12, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <span className="w-2 h-2 rounded-full bg-gradient-to-br from-blue-500 to-blue-400" />
-          London Headquarters - Global Reach
-        </motion.div>
-
+        {/* Main Heading */}
         <motion.h1
-          className="text-5xl sm:text-7xl lg:text-8xl font-display font-bold text-slate-900 leading-[1.04] tracking-tight mb-6"
+          className="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl font-display font-bold text-slate-900 leading-[1.04] tracking-tight mb-6"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.5 }}
@@ -191,8 +214,9 @@ export default function Hero() {
           Samir <span className="gradient-text text-glow">Bajagain</span>
         </motion.h1>
 
+        {/* TypeWriter */}
         <motion.p
-          className="text-xl sm:text-2xl text-slate-700 font-body mb-8 h-9 tracking-wide"
+          className="text-lg xs:text-xl sm:text-2xl text-slate-700 font-body mb-8 h-8 xs:h-9 tracking-wide"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.65 }}
