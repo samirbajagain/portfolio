@@ -1,0 +1,5 @@
+Contact: samir@samirbajagain.com.np
+Expires: 2027-03-18T00:00:00Z
+Preferred-Languages: en
+Canonical: https://www.samirbajagain.com.np/.well-known/security.txt
+Policy: https://www.samirbajagain.com.np/security-policy

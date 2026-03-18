@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary SEO -->
+    <!-- Security Headers -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()" />
+
+    <!-- HTTPS Enforcement -->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
     <title>Samir Bajagain — Civil Engineer | Entrepreneur | Creative Professional</title>
     <meta
       name="description"
@@ -17,8 +24,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Samir Bajagain — Civil Engineer | Entrepreneur" />
     <meta property="og:description" content="Engineering Vision. Building Impact. Explore the world-class portfolio of Samir Bajagain." />
-    <meta property="og:image" content="/og-cover.jpg" />
-    <meta property="og:url" content="https://samirbajagain.com" />
+    <meta property="og:image" content="https://www.samirbajagain.com.np/og-cover.jpg" />
+    <meta property="og:url" content="https://www.samirbajagain.com.np" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
