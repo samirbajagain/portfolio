@@ -133,7 +133,7 @@ export default function Hero() {
 
       {/* Left Horse Frame - Desktop/tablet side decoration */}
       <motion.div
-        className="hidden sm:flex absolute left-0 -bottom-4 sm:bottom-0 md:bottom-2 h-[30vh] sm:h-[35vh] pointer-events-none z-0 items-end justify-start"
+        className="hidden sm:flex absolute left-0 -bottom-4 sm:bottom-0 md:bottom-2 h-[30vh] sm:h-[35vh] lg:h-[50vh] pointer-events-none z-0 items-end justify-start"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
@@ -142,14 +142,14 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-left.png")}
           alt="Royal Horse Left"
-          className="w-40 md:w-60 lg:w-80 xl:w-96 h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)] object-contain"
+          className="w-40 md:w-64 lg:w-[420px] xl:w-[520px] 2xl:w-[560px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)] object-contain"
           style={{ filter: "brightness(1.1) contrast(1.08)", willChange: "transform" }}
         />
       </motion.div>
 
       {/* Right Horse Frame - Desktop/tablet side decoration */}
       <motion.div
-        className="hidden sm:flex absolute right-0 -bottom-4 sm:bottom-0 md:bottom-2 h-[30vh] sm:h-[35vh] pointer-events-none z-0 items-end justify-end"
+        className="hidden sm:flex absolute right-0 -bottom-4 sm:bottom-0 md:bottom-2 h-[30vh] sm:h-[35vh] lg:h-[50vh] pointer-events-none z-0 items-end justify-end"
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
@@ -158,7 +158,7 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-right.png")}
           alt="Royal Horse Right"
-          className="w-40 md:w-60 lg:w-80 xl:w-96 h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)] object-contain"
+          className="w-40 md:w-64 lg:w-[420px] xl:w-[520px] 2xl:w-[560px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)] object-contain"
           style={{ filter: "brightness(1.1) contrast(1.08)", willChange: "transform" }}
         />
       </motion.div>
