@@ -3,34 +3,37 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import FadeIn from "./FadeIn";
+import { publicAsset } from "../utils/assetPath";
+
+const galleryImage = (fileName) => publicAsset(`images/${fileName}`);
 
 const GALLERY = [
-  { id: 1, title: "Waterfall Ridge", category: "Nepal", src: "/images/collection-01.jpg" },
-  { id: 2, title: "MBC Summit Moment", category: "Annapurna", src: "/images/collection-02.jpg" },
-  { id: 3, title: "Tower Bridge Day", category: "London", src: "/images/collection-03.jpg" },
-  { id: 4, title: "Underground Frame", category: "London", src: "/images/collection-04.jpg" },
-  { id: 5, title: "Tilicho Panorama", category: "Nepal", src: "/images/collection-05.jpg" },
-  { id: 6, title: "Fallside Stop", category: "Nepal", src: "/images/collection-06.jpg" },
-  { id: 7, title: "Flag at Tilicho", category: "Adventure", src: "/images/collection-07.jpg" },
-  { id: 8, title: "Golden Hour Backdrop", category: "Collection", src: "/images/collection-08.jpg" },
-  { id: 9, title: "Mountain Portrait", category: "Annapurna", src: "/images/collection-09.jpg" },
-  { id: 10, title: "Glacier Energy", category: "Annapurna", src: "/images/collection-10.jpg" },
-  { id: 11, title: "Waterfall Rest", category: "Nepal", src: "/images/collection-11.jpg" },
-  { id: 12, title: "Fallside Stance", category: "Nepal", src: "/images/collection-12.jpg" },
-  { id: 13, title: "Cold Altitude Portrait", category: "Annapurna", src: "/images/collection-13.jpg" },
-  { id: 14, title: "Meditation Valley", category: "Annapurna", src: "/images/collection-14.jpg" },
-  { id: 15, title: "Tilicho 4919m", category: "Milestone", src: "/images/collection-15.jpg" },
-  { id: 16, title: "Summit Stance", category: "Annapurna", src: "/images/collection-16.jpg" },
-  { id: 17, title: "Stone Spires Trail", category: "Travel", src: "/images/collection-17.jpg" },
-  { id: 18, title: "Valley Outlook", category: "Nepal", src: "/images/collection-18.jpg" },
-  { id: 19, title: "High Meadow", category: "Nepal", src: "/images/collection-19.jpg" },
-  { id: 20, title: "Snow Pause", category: "Winter", src: "/images/collection-20.jpg" },
-  { id: 21, title: "Himalayan Viewpoint", category: "Winter", src: "/images/collection-21.jpg" },
-  { id: 22, title: "Bench Above Peaks", category: "Winter", src: "/images/collection-22.jpg" },
-  { id: 23, title: "Trail Watch", category: "Winter", src: "/images/collection-23.jpg" },
-  { id: 24, title: "Steel Bridge Frame", category: "Travel", src: "/images/collection-24.jpg" },
-  { id: 25, title: "Portrait Classic", category: "Collection", src: "/images/collection-25.jpg" },
-  { id: 26, title: "City Monument", category: "Collection", src: "/images/collection-26.jpg" },
+  { id: 1, title: "Waterfall Ridge", category: "Nepal", src: galleryImage("collection-01.jpg") },
+  { id: 2, title: "MBC Summit Moment", category: "Annapurna", src: galleryImage("collection-02.jpg") },
+  { id: 3, title: "Tower Bridge Day", category: "London", src: galleryImage("collection-03.jpg") },
+  { id: 4, title: "Underground Frame", category: "London", src: galleryImage("collection-04.jpg") },
+  { id: 5, title: "Tilicho Panorama", category: "Nepal", src: galleryImage("collection-05.jpg") },
+  { id: 6, title: "Fallside Stop", category: "Nepal", src: galleryImage("collection-06.jpg") },
+  { id: 7, title: "Flag at Tilicho", category: "Adventure", src: galleryImage("collection-07.jpg") },
+  { id: 8, title: "Golden Hour Backdrop", category: "Collection", src: galleryImage("collection-08.jpg") },
+  { id: 9, title: "Mountain Portrait", category: "Annapurna", src: galleryImage("collection-09.jpg") },
+  { id: 10, title: "Glacier Energy", category: "Annapurna", src: galleryImage("collection-10.jpg") },
+  { id: 11, title: "Waterfall Rest", category: "Nepal", src: galleryImage("collection-11.jpg") },
+  { id: 12, title: "Fallside Stance", category: "Nepal", src: galleryImage("collection-12.jpg") },
+  { id: 13, title: "Cold Altitude Portrait", category: "Annapurna", src: galleryImage("collection-13.jpg") },
+  { id: 14, title: "Meditation Valley", category: "Annapurna", src: galleryImage("collection-14.jpg") },
+  { id: 15, title: "Tilicho 4919m", category: "Milestone", src: galleryImage("collection-15.jpg") },
+  { id: 16, title: "Summit Stance", category: "Annapurna", src: galleryImage("collection-16.jpg") },
+  { id: 17, title: "Stone Spires Trail", category: "Travel", src: galleryImage("collection-17.jpg") },
+  { id: 18, title: "Valley Outlook", category: "Nepal", src: galleryImage("collection-18.jpg") },
+  { id: 19, title: "High Meadow", category: "Nepal", src: galleryImage("collection-19.jpg") },
+  { id: 20, title: "Snow Pause", category: "Winter", src: galleryImage("collection-20.jpg") },
+  { id: 21, title: "Himalayan Viewpoint", category: "Winter", src: galleryImage("collection-21.jpg") },
+  { id: 22, title: "Bench Above Peaks", category: "Winter", src: galleryImage("collection-22.jpg") },
+  { id: 23, title: "Trail Watch", category: "Winter", src: galleryImage("collection-23.jpg") },
+  { id: 24, title: "Steel Bridge Frame", category: "Travel", src: galleryImage("collection-24.jpg") },
+  { id: 25, title: "Portrait Classic", category: "Collection", src: galleryImage("collection-25.jpg") },
+  { id: 26, title: "City Monument", category: "Collection", src: galleryImage("collection-26.jpg") },
 ];
 
 function Lightbox({ items, index, onClose, onPrev, onNext }) {

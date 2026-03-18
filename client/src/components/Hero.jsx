@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
 import { HiArrowRight } from "react-icons/hi";
+import { publicAsset } from "../utils/assetPath";
 
 /* Tiny particle canvas background */
 function ParticleCanvas() {
@@ -138,7 +139,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 0.1 }}
       >
         <img
-          src="/images/horse-left.png"
+          src={publicAsset("images/horse-left.png")}
           alt="Royal Horse Left"
           className="w-56 sm:w-80 md:w-96 lg:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
           style={{ filter: "brightness(1.1) contrast(1.08)", objectFit: "contain" }}
@@ -153,7 +154,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 0.15 }}
       >
         <img
-          src="/images/horse-right.png"
+          src={publicAsset("images/horse-right.png")}
           alt="Royal Horse Right"
           className="w-56 sm:w-80 md:w-96 lg:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
           style={{ filter: "brightness(1.1) contrast(1.08)", objectFit: "contain" }}

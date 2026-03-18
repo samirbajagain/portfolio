@@ -1,6 +1,7 @@
 /** About section with expanded legacy narrative and premium visual composition */
 import { motion } from "framer-motion";
 import FadeIn from "./FadeIn";
+import { publicAsset } from "../utils/assetPath";
 
 const HIGHLIGHTS = [
   { icon: "CE", title: "Civil Engineering", desc: "Advanced structural planning, resilient infrastructure design, and technical delivery across Nepal and international contexts." },
@@ -37,7 +38,7 @@ export default function About() {
               <div className="absolute -inset-4 rounded-3xl gradient-border opacity-45" />
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] glass">
                 <img
-                  src="/images/samir-luxury.png"
+                  src={publicAsset("images/samir-luxury.png")}
                   alt="Samir Bajagain profile portrait"
                   loading="lazy"
                   className="w-full h-full object-cover object-top"
@@ -108,7 +109,7 @@ export default function About() {
             <FadeIn delay={0.38}>
               <div className="flex flex-wrap gap-3 pt-2">
                 <a href="#projects" className="btn-primary">Explore Projects</a>
-                <a href="/cv.pdf" download className="btn-outline">Download CV</a>
+                <a href={publicAsset("cv.pdf")} download className="btn-outline">Download CV</a>
               </div>
             </FadeIn>
           </div>

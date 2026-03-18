@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import FadeIn from "./FadeIn";
+import { publicAsset } from "../utils/assetPath";
 
 const VISITED_PLACES = [
   "Mugu",
@@ -54,7 +55,7 @@ export default function TravelAdventure() {
             >
               <div className="overflow-hidden rounded-2xl border border-blue-500/30 mb-6">
                 <img
-                  src="/images/travel.jpeg"
+                  src={publicAsset("images/travel.jpeg")}
                   alt="Travelled places in Nepal map"
                   loading="lazy"
                   className="w-full h-auto object-cover"
@@ -90,7 +91,7 @@ export default function TravelAdventure() {
             >
               <div className="overflow-hidden rounded-2xl border border-blue-500/30 mb-6">
                 <img
-                  src="/images/bungeeeee.jpeg"
+                  src={publicAsset("images/bungeeeee.jpeg")}
                   alt="Samir Bajagain bungee jump moment"
                   loading="lazy"
                   className="w-full h-auto object-cover"
