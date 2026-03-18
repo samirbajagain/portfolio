@@ -23,8 +23,67 @@ const SUGGESTIONS = [
   "What services does he offer?",
 ];
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
-const CHAT_ENDPOINT = `${API_BASE}/api/chat`;
+function pickOne(items) {
+  return items[Math.floor(Math.random() * items.length)];
+}
+
+function getStaticReply(question = "") {
+  const q = question.toLowerCase().trim();
+
+  if (!q) {
+    return "Tell me what you want to know about Samir - his work, services, projects, or contact details.";
+  }
+
+  if (/^(hi|hello|hey|namaste)\b/.test(q)) {
+    return pickOne([
+      "Hello! I am Samir's assistant. Ask me about his projects, services, or background.",
+      "Hi there! I can guide you through Samir's portfolio, engineering expertise, and contact options.",
+      "Hey! Great to meet you. What would you like to know about Samir Bajagain?",
+    ]);
+  }
+
+  if (/contact|email|reach|get\s*in\s*touch|hire|book|call|whatsapp/.test(q)) {
+    return "You can contact Samir at samirbajagain77@gmail.com, by phone/WhatsApp from the Contact section, or via LinkedIn for professional collaboration.";
+  }
+
+  if (/who|about|samir|background|introduction/.test(q)) {
+    return "Samir Bajagain is a Civil Engineer, entrepreneur, and creative professional based in London, UK. He works across engineering, business strategy, and visual storytelling.";
+  }
+
+  if (/project|portfolio|work|case\s*study|achievement/.test(q)) {
+    return "Samir's portfolio includes civil engineering and infrastructure work, entrepreneurial initiatives, and creative media projects. Explore the Projects section for the full showcase.";
+  }
+
+  if (/service|offer|consult|collaborat|proposal|freelance/.test(q)) {
+    return "Samir provides structural engineering consulting, project coordination, feasibility support, business strategy guidance, and creative media direction.";
+  }
+
+  if (/skill|expertise|civil|engineering|structur|infrastructure|design/.test(q)) {
+    return "Core strengths include structural design, infrastructure planning, project management, entrepreneurship, and creative communication through photography and videography.";
+  }
+
+  if (/entrepreneur|business|startup|venture/.test(q)) {
+    return "Samir is also an entrepreneur who has built and scaled ventures, combining engineering discipline with business growth strategy.";
+  }
+
+  if (/travel|adventure|nepal|tilicho|manang|mardi|bungee|pokhara/.test(q)) {
+    return "Samir's travel highlights include Mugu, Tilicho Lake, Manang, Mardi Himal, Pokhara, Lamjung, Gosaikunda, Kalinchowk, Chitwan National Park, and a bold bungee adventure.";
+  }
+
+  if (/location|where|based|london|uk/.test(q)) {
+    return "Samir is currently based in London, United Kingdom, and collaborates with clients in the UK and internationally.";
+  }
+
+  if (/thanks|thank\s*you/.test(q)) {
+    return "You are welcome. If you want, I can help you choose the right service based on your project needs.";
+  }
+
+  return pickOne([
+    `Great question about "${question}". I can help with Samir's profile, services, projects, travel highlights, and contact channels.`,
+    "I can best help with Samir's engineering work, business background, creative expertise, and hiring/contact details.",
+    "Try asking about projects, services, technical expertise, or how to collaborate with Samir.",
+  ]);
+}
 
 /* -- Typing dots animation ------------------------------------------------ */
 function TypingIndicator() {
@@ -110,45 +169,23 @@ export default function ChatWidget() {
       setShowSuggestions(false);
 
       const userMsg = { role: "user", content: trimmed };
-      const newMessages = [...messages, userMsg];
-      setMessages(newMessages);
+      setMessages((prev) => [...prev, userMsg]);
       setInput("");
       setLoading(true);
 
       try {
-        const res = await fetch(CHAT_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ messages: newMessages }),
-        });
-
-        let data = {};
-        try {
-          data = await res.json();
-        } catch {
-          data = {};
-        }
-
-        if (!res.ok) {
-          throw new Error(data.error || "Unable to reach AI assistant right now.");
-        }
-
-        const reply = typeof data.reply === "string" && data.reply.trim()
-          ? data.reply.trim()
-          : "I am here to help with Samir's profile, projects, and services.";
+        // Keep a short delay so typing animation still feels natural.
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        const reply = getStaticReply(trimmed);
 
         setMessages((prev) => [
           ...prev,
           { role: "assistant", content: reply },
         ]);
       } catch (err) {
-        const fallbackMessage = "I am having trouble connecting to the live AI service right now, but I can still help with Samir's profile, services, and contact details.";
-        const friendly = err.message.includes("Failed to fetch")
-          ? "Cannot connect to backend. Please make sure the server is running on port 5000."
-          : err.message;
-
-        setError(friendly);
+        setError("I had a temporary issue generating a reply. Please try again.");
         setMessages((prev) => {
+          const fallbackMessage = "I can still help with Samir's profile, services, projects, and contact details. Please ask again.";
           const last = prev[prev.length - 1];
           if (last?.role === "assistant" && last.content === fallbackMessage) {
             return prev;
@@ -159,7 +196,7 @@ export default function ChatWidget() {
         setLoading(false);
       }
     },
-    [input, loading, messages]
+    [input, loading]
   );
 
   const handleKey = (e) => {
@@ -308,7 +345,7 @@ export default function ChatWidget() {
                 </motion.button>
               </div>
               <p className="text-xs text-slate-500 text-center mt-1 md:mt-2 px-1">
-                Powered by OpenAI - Samir Bajagain
+                Static assistant mode - Samir Bajagain
               </p>
             </div>
           </motion.div>
