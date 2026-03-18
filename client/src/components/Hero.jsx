@@ -131,9 +131,9 @@ export default function Hero() {
         }}
       />
 
-      {/* Left Horse Frame - Full Height */}
+      {/* Left Horse Frame - Hidden on mobile, shown on sm+ */}
       <motion.div
-        className="absolute left-0 top-16 h-[calc(100vh-200px)] pointer-events-none z-[2] flex items-center"
+        className="hidden sm:flex absolute left-0 top-16 h-[calc(100vh-200px)] pointer-events-none z-[2] items-center"
         initial={{ opacity: 0, x: -120 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.1 }}
@@ -141,14 +141,14 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-left.png")}
           alt="Royal Horse Left"
-          className="w-56 sm:w-80 md:w-96 lg:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
+          className="w-40 sm:w-56 md:w-80 lg:w-[420px] xl:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
           style={{ filter: "brightness(1.1) contrast(1.08)", objectFit: "contain" }}
         />
       </motion.div>
 
-      {/* Right Horse Frame - Full Height */}
+      {/* Right Horse Frame - Hidden on mobile, shown on sm+ */}
       <motion.div
-        className="absolute right-0 top-16 h-[calc(100vh-200px)] pointer-events-none z-[2] flex items-center"
+        className="hidden sm:flex absolute right-0 top-16 h-[calc(100vh-200px)] pointer-events-none z-[2] items-center"
         initial={{ opacity: 0, x: 120 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.15 }}
@@ -156,7 +156,7 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-right.png")}
           alt="Royal Horse Right"
-          className="w-56 sm:w-80 md:w-96 lg:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
+          className="w-40 sm:w-56 md:w-80 lg:w-[420px] xl:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
           style={{ filter: "brightness(1.1) contrast(1.08)", objectFit: "contain" }}
         />
       </motion.div>
