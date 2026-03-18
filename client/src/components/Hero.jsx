@@ -167,7 +167,8 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.15, ease: "easeOut" }}
+          style={{ willChange: "transform, opacity" }}
         >
           {/* SB Logo */}
           <div className="glass px-4 py-2.5 rounded-full flex items-center gap-2 border border-blue-400/30">
@@ -183,7 +184,8 @@ export default function Hero() {
             className="inline-flex items-center gap-2 glass px-4 py-2.5 rounded-full text-[10px] xs:text-xs text-blue-600 font-semibold tracking-[0.25em] uppercase backdrop-blur-xl border border-blue-400/30"
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+            style={{ willChange: "transform, opacity" }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-blue-300 animate-pulse" />
             <span>Portfolio 2026</span>
@@ -197,7 +199,8 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full px-4 py-2.5 border border-blue-500/50 bg-gradient-to-r from-slate-100/80 to-slate-50/80 text-blue-700 text-[10px] xs:text-xs tracking-[0.24em] uppercase font-semibold backdrop-blur-md shadow-lg shadow-blue-500/10"
             initial={{ opacity: 0, y: 12, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.35, delay: 0.28, ease: "easeOut" }}
+            style={{ willChange: "transform, opacity" }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-blue-500 to-blue-400" />
             <span>Global Reach</span>
@@ -209,7 +212,8 @@ export default function Hero() {
           className="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl font-display font-bold text-slate-900 leading-[1.04] tracking-tight mb-6"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
+          style={{ willChange: "transform, opacity" }}
         >
           Samir <span className="gradient-text text-glow">Bajagain</span>
         </motion.h1>
@@ -219,7 +223,8 @@ export default function Hero() {
           className="text-lg xs:text-xl sm:text-2xl text-slate-700 font-body mb-8 h-8 xs:h-9 tracking-wide"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.65 }}
+          transition={{ duration: 0.4, delay: 0.45, ease: "easeOut" }}
+          style={{ willChange: "opacity" }}
         >
           <TypeWriter />
           <span className="ml-1 inline-block w-0.5 h-7 bg-gradient-to-b from-blue-400 to-blue-300 animate-pulse align-middle" />
@@ -229,7 +234,8 @@ export default function Hero() {
           className="text-lg sm:text-xl text-slate-600 font-body italic mb-12 max-w-2xl mx-auto leading-relaxed tracking-wide"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.75 }}
+          transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
+          style={{ willChange: "transform, opacity" }}
         >
           "Engineering mastercraft, entrepreneurial precision, and timeless aesthetics - delivered with a legacy mindset."
         </motion.p>
@@ -238,7 +244,8 @@ export default function Hero() {
           className="flex flex-wrap items-center justify-center gap-5"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
+          transition={{ duration: 0.4, delay: 0.6, ease: "easeOut" }}
+          style={{ willChange: "transform, opacity" }}
         >
           <a href="#projects" className="btn-primary group shadow-xl hover:shadow-2xl transition-all hover:scale-105">
             View Signature Works
@@ -253,7 +260,8 @@ export default function Hero() {
           className="mt-24 flex flex-wrap justify-center gap-12 sm:gap-16 text-center"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
+          transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+          style={{ willChange: "transform, opacity" }}
         >
           {[
             { value: "50+", label: "Projects" },
