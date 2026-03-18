@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /.well-known
+
+Sitemap: https://www.samirbajagain.com.np/sitemap.xml
+
+# HTTPS Only
+User-agent: *
+Request-rate: 1/5s
+Visit-time: 0000-2400
