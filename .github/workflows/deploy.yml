@@ -34,8 +34,6 @@ jobs:
 
       - name: Build for Production
         working-directory: client
-        env:
-          VITE_BASE_URL: /portfolio/
         run: npm run build
 
       - name: Deploy with GitHub Pages

@@ -3,10 +3,9 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Important: For GitHub Pages, set base to repository name
-  // Example: if repo is "my-portfolio", change to: base: '/my-portfolio/'
-  // For local dev or custom domain, use: base: '/'
-  base: process.env.VITE_BASE_URL || '/',
+  // Relative base keeps asset paths portable across GitHub Pages project URLs
+  // and custom domains without environment-specific rebuilds.
+  base: './',
   
   plugins: [react()],
   
