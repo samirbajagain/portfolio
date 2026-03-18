@@ -131,37 +131,39 @@ export default function Hero() {
         }}
       />
 
-      {/* Left Horse Frame - Visible on all screens, scales from mobile */}
+      {/* Left Horse Frame - In blank space at bottom, no text overlap */}
       <motion.div
-        className="absolute left-0 top-20 h-[calc(100vh-180px)] pointer-events-none z-[2] flex items-center"
-        initial={{ opacity: 0, x: -120 }}
+        className="absolute left-0 -bottom-4 sm:bottom-0 md:bottom-2 h-[25vh] xs:h-[30vh] sm:h-[35vh] pointer-events-none z-0 flex items-end justify-start"
+        initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.1 }}
+        transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
+        style={{ willChange: "transform, opacity" }}
       >
         <img
           src={publicAsset("images/horse-left.png")}
           alt="Royal Horse Left"
-          className="w-24 xs:w-32 sm:w-56 md:w-80 lg:w-[420px] xl:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
-          style={{ filter: "brightness(1.1) contrast(1.08)", objectFit: "contain" }}
+          className="w-16 xs:w-24 sm:w-40 md:w-60 lg:w-80 xl:w-96 h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)] object-contain"
+          style={{ filter: "brightness(1.1) contrast(1.08)", willChange: "transform" }}
         />
       </motion.div>
 
-      {/* Right Horse Frame - Visible on all screens, scales from mobile */}
+      {/* Right Horse Frame - In blank space at bottom, no text overlap */}
       <motion.div
-        className="absolute right-0 top-20 h-[calc(100vh-180px)] pointer-events-none z-[2] flex items-center"
-        initial={{ opacity: 0, x: 120 }}
+        className="absolute right-0 -bottom-4 sm:bottom-0 md:bottom-2 h-[25vh] xs:h-[30vh] sm:h-[35vh] pointer-events-none z-0 flex items-end justify-end"
+        initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.15 }}
+        transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
+        style={{ willChange: "transform, opacity" }}
       >
         <img
           src={publicAsset("images/horse-right.png")}
           alt="Royal Horse Right"
-          className="w-24 xs:w-32 sm:w-56 md:w-80 lg:w-[420px] xl:w-[520px] h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
-          style={{ filter: "brightness(1.1) contrast(1.08)", objectFit: "contain" }}
+          className="w-16 xs:w-24 sm:w-40 md:w-60 lg:w-80 xl:w-96 h-auto drop-shadow-[0_40px_100px_rgba(0,0,0,0.6)] object-contain"
+          style={{ filter: "brightness(1.1) contrast(1.08)", willChange: "transform" }}
         />
       </motion.div>
 
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto pb-8 sm:pb-12">
         {/* Top Header: SB Logo + Badges - Organized Horizontally */}
         <motion.div
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 flex-wrap"
