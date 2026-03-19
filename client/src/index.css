@@ -117,7 +117,9 @@ img {
 @media (min-width: 380px) { .section-pad { padding: 6rem 1.5rem; } }
 @media (min-width: 640px) { .section-pad { padding: 7rem 2rem; } }
 @media (min-width: 768px) { .section-pad { padding: 8rem 3rem; } }
-@media (min-width: 1024px) { .section-pad { padding: 8rem 6rem; } }
+@media (min-width: 1024px) { .section-pad { padding: 8rem 5rem; } }
+@media (min-width: 1280px) { .section-pad { padding: 8.5rem 6.5rem; } }
+@media (min-width: 1536px) { .section-pad { padding: 9rem 8rem; } }
 
 .gradient-border { position: relative; }
 .gradient-border::before {

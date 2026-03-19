@@ -219,7 +219,7 @@ export default function Projects() {
         </FadeIn>
 
         {/* Grid */}
-        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 lg:gap-7">
           <AnimatePresence>
             {visible.map((project, i) => (
               <motion.div

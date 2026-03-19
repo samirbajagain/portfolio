@@ -133,7 +133,7 @@ export default function Hero() {
 
       {/* Left Horse Frame - Desktop/tablet side decoration */}
       <motion.div
-        className="hidden sm:flex absolute left-0 lg:-left-6 xl:-left-10 -bottom-6 sm:bottom-0 md:bottom-2 lg:bottom-4 h-[32vh] sm:h-[38vh] lg:h-[58vh] pointer-events-none z-0 items-end justify-start"
+        className=\"hidden sm:flex absolute left-0 lg:-left-8 xl:-left-12 -bottom-6 sm:bottom-0 md:bottom-1 lg:bottom-6 h-[28vh] sm:h-[32vh] md:h-[40vh] lg:h-[45vh] pointer-events-none z-0 items-end justify-start\"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
@@ -142,14 +142,14 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-left.png")}
           alt="Royal Horse Left"
-          className="w-44 md:w-72 lg:w-[520px] xl:w-[620px] 2xl:w-[700px] h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
+          className="w-36 md:w-56 lg:w-80 xl:w-96 2xl:w-[420px] h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
           style={{ filter: "brightness(1.1) contrast(1.08)", willChange: "transform" }}
         />
       </motion.div>
 
       {/* Right Horse Frame - Desktop/tablet side decoration */}
       <motion.div
-        className="hidden sm:flex absolute right-0 lg:-right-6 xl:-right-10 -bottom-6 sm:bottom-0 md:bottom-2 lg:bottom-4 h-[32vh] sm:h-[38vh] lg:h-[58vh] pointer-events-none z-0 items-end justify-end"
+        className=\"hidden sm:flex absolute right-0 lg:-right-8 xl:-right-12 -bottom-6 sm:bottom-0 md:bottom-1 lg:bottom-6 h-[28vh] sm:h-[32vh] md:h-[40vh] lg:h-[45vh] pointer-events-none z-0 items-end justify-end\"
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
@@ -158,12 +158,12 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-right.png")}
           alt="Royal Horse Right"
-          className="w-44 md:w-72 lg:w-[520px] xl:w-[620px] 2xl:w-[700px] h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
+          className="w-36 md:w-56 lg:w-80 xl:w-96 2xl:w-[420px] h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
           style={{ filter: "brightness(1.1) contrast(1.08)", willChange: "transform" }}
         />
       </motion.div>
 
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto pb-8 sm:pb-12">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto pb-14 sm:pb-12">
         {/* Top Header: SB Logo + Badges - Organized Horizontally */}
         <motion.div
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 flex-wrap"
@@ -309,7 +309,7 @@ export default function Hero() {
 
       <motion.a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-600 text-xs tracking-[0.2em] uppercase z-10"
+        className="hidden sm:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-1 text-slate-600 text-xs tracking-[0.2em] uppercase z-10"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
       >
