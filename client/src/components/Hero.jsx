@@ -133,7 +133,7 @@ export default function Hero() {
 
       {/* Left Horse Frame - Desktop/tablet side decoration */}
       <motion.div
-        className="hidden sm:flex absolute left-0 lg:-left-8 xl:-left-12 -bottom-6 sm:bottom-0 md:bottom-1 lg:bottom-6 h-[28vh] sm:h-[30vh] md:h-[36vh] lg:h-[40vh] pointer-events-none z-0 items-end justify-start"
+        className="hidden sm:flex absolute left-0 lg:-left-12 xl:-left-16 -bottom-6 sm:bottom-0 md:bottom-1 lg:bottom-10 xl:bottom-12 h-[28vh] sm:h-[30vh] md:h-[36vh] lg:h-[43vh] xl:h-[46vh] pointer-events-none z-0 items-end justify-start"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
@@ -142,14 +142,14 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-left.png")}
           alt="Royal Horse Left"
-          className="w-32 md:w-48 lg:w-64 xl:w-80 2xl:w-96 h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
+          className="w-32 md:w-48 lg:w-72 xl:w-96 2xl:w-[26rem] h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
           style={{ filter: "brightness(1.1) contrast(1.08)", willChange: "transform" }}
         />
       </motion.div>
 
       {/* Right Horse Frame - Desktop/tablet side decoration */}
       <motion.div
-        className="hidden sm:flex absolute right-0 lg:-right-8 xl:-right-12 -bottom-6 sm:bottom-0 md:bottom-1 lg:bottom-6 h-[28vh] sm:h-[30vh] md:h-[36vh] lg:h-[40vh] pointer-events-none z-0 items-end justify-end"
+        className="hidden sm:flex absolute right-0 lg:-right-12 xl:-right-16 -bottom-6 sm:bottom-0 md:bottom-1 lg:bottom-10 xl:bottom-12 h-[28vh] sm:h-[30vh] md:h-[36vh] lg:h-[43vh] xl:h-[46vh] pointer-events-none z-0 items-end justify-end"
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
@@ -158,7 +158,7 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-right.png")}
           alt="Royal Horse Right"
-          className="w-32 md:w-48 lg:w-64 xl:w-80 2xl:w-96 h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
+          className="w-32 md:w-48 lg:w-72 xl:w-96 2xl:w-[26rem] h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
           style={{ filter: "brightness(1.1) contrast(1.08)", willChange: "transform" }}
         />
       </motion.div>
