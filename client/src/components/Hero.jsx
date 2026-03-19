@@ -133,7 +133,7 @@ export default function Hero() {
 
       {/* Left Horse Frame - Desktop/tablet side decoration */}
       <motion.div
-        className="hidden sm:flex absolute left-0 lg:-left-16 xl:-left-24 2xl:-left-28 -bottom-6 sm:bottom-0 md:bottom-1 lg:bottom-12 xl:bottom-14 h-[28vh] sm:h-[30vh] md:h-[36vh] lg:h-[46vh] xl:h-[52vh] pointer-events-none z-0 items-end justify-start"
+        className="hidden sm:flex absolute left-0 lg:-left-16 xl:-left-24 2xl:-left-28 -bottom-6 sm:bottom-0 md:bottom-1 lg:bottom-12 xl:bottom-14 h-[28vh] sm:h-[30vh] md:h-[36vh] lg:h-[48vh] xl:h-[56vh] pointer-events-none z-0 items-end justify-start"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
@@ -142,14 +142,14 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-left.png")}
           alt="Royal Horse Left"
-          className="w-32 md:w-48 lg:w-80 xl:w-[28rem] 2xl:w-[30rem] h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
+          className="w-32 md:w-48 lg:w-96 xl:w-[32rem] 2xl:w-[34rem] h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
           style={{ filter: "brightness(1.1) contrast(1.08)", willChange: "transform" }}
         />
       </motion.div>
 
       {/* Right Horse Frame - Desktop/tablet side decoration */}
       <motion.div
-        className="hidden sm:flex absolute right-0 lg:-right-16 xl:-right-24 2xl:-right-28 -bottom-6 sm:bottom-0 md:bottom-1 lg:bottom-12 xl:bottom-14 h-[28vh] sm:h-[30vh] md:h-[36vh] lg:h-[46vh] xl:h-[52vh] pointer-events-none z-0 items-end justify-end"
+        className="hidden sm:flex absolute right-0 lg:-right-16 xl:-right-24 2xl:-right-28 -bottom-6 sm:bottom-0 md:bottom-1 lg:bottom-12 xl:bottom-14 h-[28vh] sm:h-[30vh] md:h-[36vh] lg:h-[48vh] xl:h-[56vh] pointer-events-none z-0 items-end justify-end"
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
@@ -158,7 +158,7 @@ export default function Hero() {
         <img
           src={publicAsset("images/horse-right.png")}
           alt="Royal Horse Right"
-          className="w-32 md:w-48 lg:w-80 xl:w-[28rem] 2xl:w-[30rem] h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
+          className="w-32 md:w-48 lg:w-96 xl:w-[32rem] 2xl:w-[34rem] h-auto drop-shadow-[0_50px_120px_rgba(0,0,0,0.62)] object-contain"
           style={{ filter: "brightness(1.1) contrast(1.08)", willChange: "transform" }}
         />
       </motion.div>
